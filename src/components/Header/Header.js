@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-import { Menu, Search, User } from 'react-feather';
+import React from "react";
+import styled from "styled-components/macro";
+import { Menu, Search, User } from "react-feather";
 
-import { QUERIES } from '../../constants';
+import { QUERIES } from "../../constants";
 
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import Logo from '../Logo';
-import Button from '../Button';
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import Logo from "../Logo";
+import Button from "../Button";
 
 const Header = () => {
   return (
@@ -39,6 +39,12 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+
+  @media ${QUERIES.desktopAndUp} {
+    background: transparent;
+    color: var(--color-gray-900);
+    padding: 55px 0;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
@@ -65,6 +71,10 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+
+  @media ${QUERIES.desktopAndUp} {
+    margin-top: -100px;
+  }
 `;
 
 export default Header;
